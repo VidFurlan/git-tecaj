@@ -33,6 +33,8 @@ git init <directory>
 #### remote 
 Git remote omogoca nadzor povezav repozitorija na remote repozitorij
 (eden izmed teh je origin remote).
+![Remotes](https://wac-cdn.atlassian.com/dam/jcr:df13d351-6189-4f0b-94f0-21d3fcd66038/01.svg?cdnVersion=1427)
+Remota na sliki bi bili v primeru na sliki Centralni in Johnov repozitorij.
 ```
 # osnoven prikaz imen remotov
 git remote
@@ -107,8 +109,10 @@ git fetch <remote> <branch>
 
 #### pull
 Git pull je kombinacija ukazov fetch in merge.
-Najprej se izvrsi ukaz git fetch, ki prenese vsebino remote repozitorija, 
-nato pa je ta zdruzena z nasim lokalnim repozitorijem.
+![](https://wac-cdn.atlassian.com/dam/jcr:63e58c34-b273-4e48-a6b1-6e3ba4d4a0ea/01%20bubble%20diagram-01.svg?cdnVersion=1427)
+Najprej se izvrsi ukaz git fetch, ki prenese vsebino remote repozitorija.
+![](https://wac-cdn.atlassian.com/dam/jcr:0269bb2d-eb7f-43d8-80a2-8afa88d11eea/02%20bubble%20diagram-02.svg?cdnVersion=1427)
+Nato se izvede git merge med prenesenim origin branchom in lokalnim branchom.
 
 ```
 git pull <remote>
@@ -127,18 +131,46 @@ git clone <repo> <directory>
 ## Log in ogled sprememb
 
 #### log 
+Git log je namenjen izpisu preteklih commitov.
 ```
+# osnoven ispis
+git log
 
+#   commit bcf254309eddf4c1e9fa775a9dce01a0669a635e (HEAD -> main, origin/main)
+#   Author: Vid Furlan <vidfurlan@example.com>
+#   Date:   Mon Feb 5 18:43:10 2024 +0100
+#
+#       Commit message
+
+# natancen prikaz sprememb (-p)
+git log -p
 ```
-
 #### status
+Git status izpise trenutno stanje datotek, kar se tice git sledenja
 ```
+git status
 
+#   On branch main
+#   Your branch is up to date with 'origin/main'.
+#
+#   Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+#        new file:   dodano
+#
+#   Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+#       modified:   readme.md
+#
+#   Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#       nesledeno
 ```
 
 #### diff
+Git diff prikaze razlike med izbranima viroma (commiti, datoteke, branchi...)
 ```
-
+git diff <source1> <source2>
 ```
 
 ## Branches
@@ -182,3 +214,6 @@ git clone <repo> <directory>
 
 ## Markdown
 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+
+## Workflow
+![Workflow](https://wac-cdn.atlassian.com/dam/jcr:cc0b526e-adb7-4d45-874e-9bcea9898b4a/04%20Hotfix%20branches.svg?cdnVersion=1427)
