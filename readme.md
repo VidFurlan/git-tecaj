@@ -16,6 +16,10 @@ git config --global user.email "user@example.com"
 # ta nastavitev veljala samo za repozitorij ki je trenutno v rabi
 git config --local user.name "Username samo za ta repo"
 git config --local user.email "user_samo_za_ta_repo@example.com"
+
+# za spreminjanje nastavitev lokalnega repozitorija lahko uporabimo tudi
+git config user.name "Username samo za ta repo"
+git config user.email "user_samo_za_ta_repo@example.com"
 ```
 
 ### init
